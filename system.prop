@@ -133,6 +133,8 @@ ro.config.hw_tether_dun_enable=0
 ro.dual.sim.phone=true
 
 ro.multi.rild=true
+persist.dsds.enabled=true
+persist.multisim.config=1
 
 ro.config.hw_email_signature=Sent from Huawei Mobile
 
