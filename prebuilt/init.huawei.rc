@@ -60,6 +60,9 @@ on boot
 
     setprop wifi.interface eth0
 
+    # Enable Bluetooth 802.11 PAL when Bluetooth is turned on
+    setprop ro.config.bt.amp no
+
     # port-bridge
     chmod 0660 /dev/smd0
     chown system system /dev/smd0
@@ -178,6 +181,22 @@ on post-fs-data
     chown bluetooth system /data/btaddr
     chmod 0660 /data/btaddr
 
+#create  WIFI filesystem structure
+    mkdir /data/misc
+    chmod 01771 /data/misc/
+    chown system misc /data/misc/
+    mkdir /data/misc/wifi
+    chmod 0770 /data/misc/wifi
+    chown wifi wifi /data/misc/wifi/
+    mkdir /data/misc/wifi/sockets 0775 wifi wifi
+    mkdir /data/misc/wpa_supplicant 0775 wifi wifi
+    mkdir /data/misc/dhcp 0775 dhcp dhcp
+
+    mkdir /data/misc/wifi/load
+    chmod 0775 /data/misc/wifi/load
+    chown system system /data/misc/wifi/load/
+    mkdir /data/misc/wifi/bin 0775 system system
+
     # Create the directories used by the Wireless subsystem
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -185,6 +204,21 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
+    chmod 0660 /dev/assd
+    chown smartcard smartcard /dev/assd
+    
+    chmod 2770 /data/radio
+    
+    chown radio system /sys/class/leds/ptt_led/brightness
+    
+    chmod 0664 /dev/mtk6252_dev
+    chown system system /dev/mtk6252_dev
+    chown system system /sys/devices/platform/mtk6252/download_mode
+    chown system system /sys/devices/platform/mtk6252/usb_sel
+    chown system system /sys/devices/platform/mtk6252/onoff
+    chown system system /sys/devices/platform/mtk6252/softwarestate
+    chown system system /sys/devices/platform/mtk6252/pwrstat
+    
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 
@@ -255,14 +289,23 @@ on post-fs-data
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
-on property:init.svc.bluetoothd=running
+on property:bluetooth.isEnabled=true
+    start abtfilt
     write /sys/class/bluetooth/hci0/idle_timeout 7000
 
-service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11 /dev/block/mmcblk0p17
+on property:bluetooth.isEnabled=false
+    start amp_unload
+    
+service rmt_storage /system/bin/rmt_storage
     class main
     user root
     disabled
 
+service hwdevctl /system/bin/hwdevctlservice
+    class main
+    user system
+    group graphics
+    
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
@@ -274,6 +317,11 @@ service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
     class late_start
     user bluetooth
     group bluetooth net_bt_admin inet
+    disabled
+    oneshot
+
+service bt-sap /system/bin/sapd 15
+    class late_start
     disabled
     oneshot
 
@@ -303,14 +351,6 @@ service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
     group system inet
     disabled
 
-on property:ro.baseband="msm"
-    start port-bridge
-    # Enable BT-DUN only for all msms
-    setprop ro.qualcomm.bluetooth.dun true
-
-on property:ro.baseband="unknown"
-    start port-bridge
-
 service qmiproxy /system/bin/qmiproxy
     class main
     user radio
@@ -323,7 +363,7 @@ service qmuxd /system/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps
-    disabled
+
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -340,6 +380,23 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -ieth0 -puse_p2p_gro
     disabled
     oneshot
 
+service amp_init /system/bin/amploader -i
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service amp_load /system/bin/amploader -l 7000
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service amp_unload /system/bin/amploader -u
+    class late_start
+    user root
+    disabled
+    oneshot
 service dhcpcd_eth0 /system/bin/dhcpcd -BKLG
     class main
     disabled
@@ -470,6 +527,9 @@ service map1 /system/bin/sdptool add --channel=17 MAS1
     group bluetooth net_bt_admin
     disabled
     oneshot
+
+service gps_nmea /system/bin/port-bridge /dev/nmea /dev/ttyGS1
+    disabled
 
 service ril-daemon /system/bin/rild
     class main

@@ -132,6 +132,8 @@ ro.config.camera.afctl.enable=true
 ro.config.hw_tether_dun_enable=0
 ro.dual.sim.phone=true
 
+ro.multi.rild=true
+
 ro.config.hw_email_signature=Sent from Huawei Mobile
 
 ro.confg.hw_appsbootversion=U8825DV100R001C17B938SP01_APPSBOOT
