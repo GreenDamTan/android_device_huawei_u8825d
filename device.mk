@@ -97,7 +97,9 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/softmac:system/wifi/ath6k/softmac \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/utf.bin:system/wifi/ath6k/utf.bin \
     device/huawei/u8825d/prebuilt/system/wifi/ar6000.ko:system/wifi/ar6000.ko \
-    device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko
+    device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
+#    device/huawei/u8825d/prebuilt/system/wifi/ar6000.ko:root/wifi/ar6000.ko \
+#    device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:root/wifi/cfg80211.ko
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
