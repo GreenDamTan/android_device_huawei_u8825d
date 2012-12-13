@@ -20,9 +20,9 @@
 #define LOG_TAG "RILC"
 //uncomment this block to enable logging from this file.
 #if 0
-#define LOG_NDEBUG 1
-#define LOG_NDDEBUG 1
-#define LOG_NIDEBUG 1
+#define LOG_NDEBUG 0
+#define LOG_NDDEBUG 0
+#define LOG_NIDEBUG 0
 #endif
 
 #include <hardware_legacy/power.h>
