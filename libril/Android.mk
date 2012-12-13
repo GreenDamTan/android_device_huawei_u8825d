@@ -1,5 +1,5 @@
 # Copyright 2006 The Android Open Source Project
-
+ifeq ($(BOARD_PROVIDES_LIBRIL),true)
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -42,3 +42,4 @@ LOCAL_LDLIBS += -lpthread
 
 include $(BUILD_STATIC_LIBRARY)
 endif # ANDROID_BIONIC_TRANSITION
+endif
