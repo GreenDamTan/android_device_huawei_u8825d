@@ -64,6 +64,9 @@ PRODUCT_PACKAGES += \
 	iptables \
 	ip6tables
 
+PRODUCT_PACKAGES += \
+    libril
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 

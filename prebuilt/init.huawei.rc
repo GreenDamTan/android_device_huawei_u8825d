@@ -195,6 +195,12 @@ on post-fs-data
     mkdir /data/misc/wifi/load
     chmod 0775 /data/misc/wifi/load
     chown system system /data/misc/wifi/load/
+    symlink /system/wifi/ath6k/caldata.bin /data/misc/wifi/load/caldata.bin
+    symlink /system/wifi/ath6k/athtcmd_ram.bin /data/misc/wifi/load/athtcmd_ram.bin
+    symlink /system/wifi/ath6k/nullTestFlow.bin /data/misc/wifi/load/nullTestFlow.bin
+    symlink /system/wifi/ath6k/utf.bin /data/misc/wifi/load/utf.bin
+    symlink /system/wifi/ath6k/fw-3.bin /data/misc/wifi/load/fw-3.bin
+    symlink /system/wifi/ath6k/softmac /data/misc/wifi/load/softmac
     mkdir /data/misc/wifi/bin 0775 system system
 
     # Create the directories used by the Wireless subsystem
@@ -567,3 +573,25 @@ service akm8962 /system/bin/akmd8962
     disabled
     oneshot
 
+service atfwd /system/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+    onrestart /system/bin/log -t RIL-ATFWD -p w "ATFWD daemon restarted"
+    
+service atserver /system/bin/atserver
+    class core
+    oneshot
+service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
+    class late_start
+    group radio
+    disabled
+    oneshot
+
+on property:persist.data.ds_fmc_app.mode=1
+    start ds_fmc_appd
+
+service bt-sap /system/bin/sapd 15
+    class late_start
+    disabled
+    oneshot
