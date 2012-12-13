@@ -4341,7 +4341,6 @@ int isMultiRild()
         if (strncmp(prop_val, "true", 4) == 0) {
             enabled = 1;
         }
-		enabled = 0;
         ALOGD("isMultiRild: prop_val = %s enabled = %d", prop_val, enabled);
     }
     return enabled;
