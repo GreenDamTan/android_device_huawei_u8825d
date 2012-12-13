@@ -17,9 +17,9 @@
 ** limitations under the License.
 */
 
-#define LOG_TAG "RILC===QIWU==="
+#define LOG_TAG "RILC"
 //uncomment this block to enable logging from this file.
-#if 1
+#if 0
 #define LOG_NDEBUG 1
 #define LOG_NDDEBUG 1
 #define LOG_NIDEBUG 1
