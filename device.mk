@@ -14,15 +14,14 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libmm-omxcore \
     libdivxdrmdecrypt \
-    libstagefrighthw \
-    CMFileManager
+    libstagefrighthw
     
 # Graphics 
 PRODUCT_PACKAGES += \
-    gralloc.msm7627a \
-    copybit.msm7627a \
-	lights.msm7627a \
-    hwcomposer.msm7627a \
+    gralloc.msm7x27a \
+    copybit.msm7x27a \
+	lights.msm7x27a \
+    hwcomposer.msm7x27a \
     libtilerenderer \
 	liboverlay \
     libgenlock \
@@ -30,22 +29,18 @@ PRODUCT_PACKAGES += \
 	libI420colorconvert \
 	libhwcexternal \
 	libhwcservice \
-	libqdutils \
-	mm-vdec-omx-test \
-	mm-video-driver-test \
-	mm-venc-omx-test720p \
-	mm-video-encdrv-test
+	libqdutils
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm7627a \
-	audio_policy.msm7627a \
+    audio.primary.msm7x27a \
+	audio_policy.msm7x27a \
     audio.a2dp.default \
     libaudioutils
 
 # Other
 PRODUCT_PACKAGES += \
     dexpreopt \
-    gps.msm7627a \
+    gps.msm7x27a \
     libloc_api-rpc \
     Camera
 
@@ -88,8 +83,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/ueventd.huawei.rc:root/ueventd.huawei.rc \
     device/huawei/u8825d/prebuilt/init.qcom.sh:root/init.qcom.sh \
     device/huawei/u8825d/prebuilt/init.huawei.usb.rc:root/init.huawei.usb.rc \
-    device/huawei/u8825d/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc \
-    device/huawei/u8825d/prebuilt/charger:root/charger
+    device/huawei/u8825d/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/wifi/ath6k/athtcmd_ram.bin \
@@ -100,18 +94,11 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/softmac:system/wifi/ath6k/softmac \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/utf.bin:system/wifi/ath6k/utf.bin \
     device/huawei/u8825d/prebuilt/system/wifi/ar6000.ko:system/wifi/ar6000.ko \
-    device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
-#    device/huawei/u8825d/prebuilt/system/wifi/ar6000.ko:root/wifi/ar6000.ko \
-#    device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:root/wifi/cfg80211.ko
+    device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/huawei/u8825d/audio_policy.conf:system/etc/audio_policy.conf
-
-PRODUCT_COPY_FILES += \
-    device/huawei/u8825d/prebuilt/system/etc/bluetooth/BCM4330.hcd:system/etc/bluetooth/BCM4330.hcd \
-    device/huawei/u8825d/prebuilt/system/etc/bluetooth/BCM4329.hcd:system/etc/bluetooth/BCM4329.hcd \
-    device/huawei/u8825d/prebuilt/system/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
