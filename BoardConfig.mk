@@ -123,7 +123,7 @@ BOARD_FORCE_RAMDISK_ADDRESS := 0x01508000
 
 # Custom releasetools for old partition table.
 TARGET_PROVIDES_RELEASETOOLS := true
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/huawei/c8812e/releasetools/ota_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/huawei/u8825d/releasetools/ota_from_target_files
 
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
