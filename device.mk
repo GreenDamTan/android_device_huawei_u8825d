@@ -20,20 +20,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gralloc.msm7x27a \
     copybit.msm7x27a \
-	lights.msm7x27a \
+    lights.msm7x27a \
     hwcomposer.msm7x27a \
     libtilerenderer \
-	liboverlay \
+    liboverlay \
     libgenlock \
     libmemalloc \
-	libI420colorconvert \
-	libhwcexternal \
-	libhwcservice \
-	libqdutils
+    libI420colorconvert \
+    libhwcexternal \
+    libhwcservice \
+    libqdutils
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.msm7x27a \
-	audio_policy.msm7x27a \
+    audio_policy.msm7x27a \
     audio.a2dp.default \
     libaudioutils
 
@@ -56,11 +56,8 @@ PRODUCT_PACKAGES += \
 
 # iptables
 PRODUCT_PACKAGES += \
-	iptables \
-	ip6tables
-
-PRODUCT_PACKAGES += \
-    libril
+    iptables \
+    ip6tables
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -79,11 +76,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
     
 PRODUCT_COPY_FILES += \
-    device/huawei/u8825d/prebuilt/init.huawei.rc:root/init.huawei.rc \
-    device/huawei/u8825d/prebuilt/ueventd.huawei.rc:root/ueventd.huawei.rc \
-    device/huawei/u8825d/prebuilt/init.qcom.sh:root/init.qcom.sh \
-    device/huawei/u8825d/prebuilt/init.huawei.usb.rc:root/init.huawei.usb.rc \
-    device/huawei/u8825d/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc
+    device/huawei/u8825d/ramdisk/init.huawei.rc:root/init.huawei.rc \
+    device/huawei/u8825d/ramdisk/ueventd.huawei.rc:root/ueventd.huawei.rc \
+    device/huawei/u8825d/ramdisk/init.qcom.sh:root/init.qcom.sh \
+    device/huawei/u8825d/ramdisk/init.huawei.usb.rc:root/init.huawei.usb.rc \
+    device/huawei/u8825d/ramdisk/init.msm7627a.rc:root/init.msm7627a.rc
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/wifi/ath6k/athtcmd_ram.bin \
@@ -93,12 +90,12 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/nullTestFlow.bin:system/wifi/ath6k/nullTestFlow.bin \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/softmac:system/wifi/ath6k/softmac \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/utf.bin:system/wifi/ath6k/utf.bin \
-    device/huawei/u8825d/prebuilt/system/wifi/ar6000.ko:system/wifi/ar6000.ko \
+    device/huawei/u8825d/prebuilt/system/lib/modules/ar6000.ko:system/lib/modules/ar6000.ko \
     device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/huawei/u8825d/audio_policy.conf:system/etc/audio_policy.conf
+    device/huawei/u8825d/prebuilt/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
@@ -113,8 +110,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
     device/huawei/u8825d/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab \
-    device/huawei/u8825d/mediaprofiles/media_profiles.xml:system/etc/media_profiles.xml \
-    device/huawei/u8825d/media_codecs.xml:system/etc/media_codecs.xml \
+    device/huawei/u8825d/prebuilt/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    device/huawei/u8825d/prebuilt/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.rendering.sh:system/etc/init.qcom.rendering.sh \
     device/huawei/u8825d/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt

@@ -38,8 +38,8 @@ dalvik.vm.heapsize=64m
 dalvik.vm.dexopt-flags=m=y,u=n
 
 # Mount the internal SD card, too
-ro.additionalmounts=/mnt/emmc
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+ro.additionalmounts=/storage/sdcard1
+ro.vold.switchablepair=/storage/sdcard1,/storage/sdcard0
 ro.emmc.sdcard.partition=19
 
 persist.sys.use_dithering=2
@@ -203,6 +203,6 @@ ro.config.hw_music_dts=false
 ro.config.hw_dtsmode=true
 ro.config.is_cdma_phone=true
 ro.cfg.hw_ctl_cardactive=true
-ro.confg.hw_appsbootversion=U8825DV100R001C17B956_APPSBOOT
-ro.confg.hw_appversion=U8825DV100R001C17B956_KERNEL
-ro.confg.hw_appfsversion=U8825DV100R001C17B956_SYSIMG
+ro.confg.hw_appsbootversion=U8825DVSHENDUOS_APPSBOOT
+ro.confg.hw_appversion=U8825DVSHENDUOS_KERNEL
+ro.confg.hw_appfsversion=U8825DVSHENDUOS_SYSIMG
