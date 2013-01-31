@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     libhwcexternal \
     libhwcservice \
     libqdutils
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.msm7x27a \
@@ -83,13 +84,12 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/ramdisk/init.msm7627a.rc:root/init.msm7627a.rc
 
 PRODUCT_COPY_FILES += \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/wifi/ath6k/athtcmd_ram.bin \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/caldata.bin:system/wifi/ath6k/caldata.bin \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/caldata_MSM8X25_C8825D.bin:system/wifi/ath6k/caldata_MSM8X25_C8825D.bin \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/fw-3.bin:system/wifi/ath6k/fw-3.bin \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/nullTestFlow.bin:system/wifi/ath6k/nullTestFlow.bin \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/softmac:system/wifi/ath6k/softmac \
-    device/huawei/u8825d/prebuilt/system/wifi/ath6k/utf.bin:system/wifi/ath6k/utf.bin \
+    device/huawei/u8825d/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/etc/firmware/ath6k/athtcmd_ram.bin \
+    device/huawei/u8825d/prebuilt/system/wifi/ath6k/caldata_MSM8X25_C8825D.bin:system/etc/firmware/load/caldata.bin \
+    device/huawei/u8825d/prebuilt/system/wifi/ath6k/fw-3.bin:system/etc/firmware/ath6k/fw-3.bin \
+    device/huawei/u8825d/prebuilt/system/wifi/ath6k/nullTestFlow.bin:system/etc/firmware/ath6k/nullTestFlow.bin \
+    device/huawei/u8825d/prebuilt/system/wifi/ath6k/softmac:system/etc/firmware/ath6k/softmac \
+    device/huawei/u8825d/prebuilt/system/wifi/ath6k/utf.bin:system/etc/firmware/ath6k/utf.bin \
     device/huawei/u8825d/prebuilt/system/lib/modules/ar6000.ko:system/lib/modules/ar6000.ko \
     device/huawei/u8825d/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko
 
@@ -99,8 +99,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    device/huawei/u8825d/prebuilt/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/u8825d/prebuilt/system/etc/AudioFilter_MSM8X25_U8825D.csv:system/etc/AudioFilter_MSM8X25_U8825D.csv \
+    device/huawei/u8825d/prebuilt/system/etc/AudioFilter_MSM8X25_U8825D.csv:system/etc/AudioFilter.csv \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.composition_type.sh:system/etc/init.qcom.composition_type.sh \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/huawei/u8825d/prebuilt/system/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
