@@ -33,8 +33,8 @@ persist.sys.usb.config=mass_storage,adb
 dalvik.vm.dexopt-data-only=1
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.heapstartsize=5m
-dalvik.vm.heapgrowthlimit=24m
-dalvik.vm.heapsize=64m
+dalvik.vm.heapgrowthlimit=48m
+dalvik.vm.heapsize=128m
 dalvik.vm.dexopt-flags=m=y,u=n
 
 # Mount the internal SD card, too

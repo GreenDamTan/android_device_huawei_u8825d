@@ -114,7 +114,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel 
 TARGET_KERNEL_SOURCE := kernel/huawei/G330D
-TARGET_KERNEL_CONFIG := shendu_u8825d_defconfig
+TARGET_KERNEL_CONFIG				:= shendu_msm8x25_defconfig
 #TARGET_PREBUILT_KERNEL := device/huawei/u8825d/kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=huawei loglevel=1
 BOARD_KERNEL_BASE := 0x00200000
