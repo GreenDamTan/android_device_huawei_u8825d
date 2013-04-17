@@ -65,10 +65,8 @@ BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_LIBS := true
 TARGET_GRALLOC_USES_ASHMEM := true
 COMMON_GLOBAL_CFLAGS += -DTARGET_MSM7x27A
-#COMMON_GLOBAL_CFLAGS += -D7627A
-#TARGET_USES_OVERLAY := true
 TARGET_NO_HW_VSYNC := true
-COMMON_GLOBAL_CFLAGS +=-DANCIENT_GL
+COMMON_GLOBAL_CFLAGS += -DGENLOCK_IOC_DREADLOCK -DANCIENT_GL
 
 #TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 DCHECK_FOR_EXTERNAL_FORMAT := true
@@ -90,11 +88,8 @@ ENABLE_WEBGL := true
 
 BOARD_HAVE_BLUETOOTH := true
 
-# RIL
-#BOARD_PROVIDES_LIBRIL := true
 
 # Wi-Fi
-#BOARD_USE_SERNUM_FOR_MAC := true
 BOARD_WLAN_DEVICE					:= ath6kl
 WPA_SUPPLICANT_VERSION				:= VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER 		:= NL80211
@@ -133,12 +128,10 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 
 # Recovery
 TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8825d/recovery_kernel
-BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8825d/recovery/graphics_cn.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8825d/recovery/recovery-keys.c
 TARGET_RECOVERY_INITRC := device/huawei/u8825d/recovery/etc/init.rc
 BOARD_HAS_NO_SELECT_BUTTON := true
 RECOVERY_CHARGEMODE := true
 BOARD_RECOVERY_RMT_STORAGE := true
-#BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun1/file"
 BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 

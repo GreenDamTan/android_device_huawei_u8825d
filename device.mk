@@ -42,9 +42,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     dexpreopt \
     gps.msm7x27a \
-    libloc_api-rpc \
-    Camera
-
+    libloc_api-rpc
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -80,8 +78,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8825d/ramdisk/init.huawei.rc:root/init.huawei.rc \
     device/huawei/u8825d/ramdisk/ueventd.huawei.rc:root/ueventd.huawei.rc \
     device/huawei/u8825d/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    device/huawei/u8825d/ramdisk/init.huawei.usb.rc:root/init.huawei.usb.rc \
-    device/huawei/u8825d/ramdisk/init.msm7627a.rc:root/init.msm7627a.rc
+    device/huawei/u8825d/ramdisk/init.huawei.usb.rc:root/init.huawei.usb.rc
 
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/prebuilt/system/wifi/ath6k/athtcmd_ram.bin:system/etc/firmware/ath6k/athtcmd_ram.bin \
