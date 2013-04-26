@@ -76,6 +76,7 @@ PRODUCT_COPY_FILES += \
     
 PRODUCT_COPY_FILES += \
     device/huawei/u8825d/ramdisk/init.huawei.rc:root/init.huawei.rc \
+	device/huawei/u8825d/ramdisk/init.target.rc:root/init.target.rc \
     device/huawei/u8825d/ramdisk/ueventd.huawei.rc:root/ueventd.huawei.rc \
     device/huawei/u8825d/ramdisk/init.qcom.sh:root/init.qcom.sh \
     device/huawei/u8825d/ramdisk/init.huawei.usb.rc:root/init.huawei.usb.rc

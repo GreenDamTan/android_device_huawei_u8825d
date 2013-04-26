@@ -108,9 +108,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 183500800
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel 
-TARGET_KERNEL_SOURCE := kernel/huawei/G330D
-TARGET_KERNEL_CONFIG				:= shendu_msm8x25_defconfig
-#TARGET_PREBUILT_KERNEL := device/huawei/u8825d/kernel
+#TARGET_KERNEL_SOURCE := ../shendu-CM10/kernel/huawei/G330D
+#TARGET_KERNEL_CONFIG				:= shendu_u8825d_defconfig
+TARGET_PREBUILT_KERNEL := device/huawei/u8825d/kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=huawei loglevel=1
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_PAGE_SIZE := 2048
@@ -127,6 +127,7 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
 # Recovery
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8825d/recovery_kernel
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8825d/recovery/recovery-keys.c
 TARGET_RECOVERY_INITRC := device/huawei/u8825d/recovery/etc/init.rc
